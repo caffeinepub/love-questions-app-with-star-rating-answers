@@ -1,0 +1,61 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-the-1-5-star-rating-input-on-the-question-screen-with-a-free-form-written-answer-input-multi-line-text-and-update-all-user-facing-labels-buttons-messages-accordingly-in-english",
+      "featureTitle": "Replace the 1–5 star rating input on the question screen with a free-form written answer input (multi-line text), and update all user-facing labels/buttons/messages accordingly in English.",
+      "files": [
+        "frontend/src/components/AppLayout.tsx",
+        "frontend/src/components/QuestionCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-save-answer-flow-from-the-question-screen-to-persist-a-written-answer-instead-of-a-numeric-rating-including-client-side-validation-and-success-error-handling",
+      "featureTitle": "Update the save-answer flow from the question screen to persist a written answer instead of a numeric rating, including client-side validation and success/error handling.",
+      "files": [
+        "frontend/src/components/QuestionCard.tsx",
+        "frontend/src/hooks/useSaveAnswer.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-backend-answer-record-shape-and-the-getallanswers-response-to-include-the-written-answer-and-remove-rating-and-update-the-frontend-saved-answers-view-to-display-the-written-answer-text-for-each-saved-entry",
+      "featureTitle": "Update the backend Answer record shape and the getAllAnswers response to include the written answer (and remove rating), and update the frontend Saved Answers view to display the written answer text for each saved entry.",
+      "files": [
+        "frontend/src/views/SavedAnswersView.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

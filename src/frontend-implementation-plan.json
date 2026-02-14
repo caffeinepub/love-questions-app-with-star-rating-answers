@@ -1,0 +1,73 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Replace star rating with written answers",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Replace the star rating input on the question screen with a multi-line written answer input and update all related English UI copy.",
+      "acceptanceCriteria": [
+        "The question screen no longer renders the StarRating component.",
+        "A text input (textarea) is shown for the user to write an answer.",
+        "The Save button is disabled until the written answer is non-empty (after trimming whitespace).",
+        "All user-facing strings related to the answer input reflect written answers (e.g., replace “Rate this moment:” and “Rating:” with appropriate wording)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/QuestionCard.tsx",
+          "operation": "modify",
+          "description": "Remove StarRating usage and rating state; add a controlled multi-line textarea for a written answer, update labels (e.g., from “Rate this moment:” to “Write your answer:”), and disable the Save button until answerText.trim() is non-empty. Keep styling consistent using existing shadcn/ui Card/Button/Alert components. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/AppLayout.tsx",
+          "operation": "modify",
+          "description": "Update any remaining user-facing copy that refers to “ratings” so it reflects written answers (English), while keeping the existing layout and navigation intact. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Update the question screen save flow to persist written answers with client-side validation and existing success/error handling patterns.",
+      "acceptanceCriteria": [
+        "Frontend save payload uses a written answer string instead of a rating number.",
+        "Client-side validation prevents saving empty/whitespace-only answers and shows an appropriate error (toast or inline error consistent with existing patterns).",
+        "On successful save, the Saved Answers query is invalidated/refreshed as it is today.",
+        "Backend canister exposes a save method that accepts the written answer and stores it with questionId and timestamp."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSaveAnswer.ts",
+          "operation": "modify",
+          "description": "Change the mutation input to accept textAnswer (string) + timestamp (number) and call the backend actor save method using the written answer (no numeric rating). Update client-side validation to reject empty/whitespace-only text answers, and keep existing success/error toast behavior and React Query invalidation for ['answers']. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/QuestionCard.tsx",
+          "operation": "modify",
+          "description": "Update handleSave to send { id, questionId, textAnswer, timestamp } via useSaveAnswer; add client-side validation for whitespace-only input before invoking the mutation and display the validation error using an inline Alert and/or existing toast pattern already used in the app. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Update the Saved Answers view to display written answer text (no star icons/ratings) and align frontend types with the updated Answer shape.",
+      "acceptanceCriteria": [
+        "Backend Answer type contains questionId, answerText (written answer), and timestamp (no rating field).",
+        "Saved Answers view no longer renders star icons/ratings.",
+        "Saved Answers view renders the written answer text for each saved entry in a readable, themed layout.",
+        "The app builds successfully with updated candid/type bindings and no TypeScript errors from outdated Answer/rating fields."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/views/SavedAnswersView.tsx",
+          "operation": "modify",
+          "description": "Remove star-rating rendering (Star import, rating computation, and star list UI). Render the saved written answer text (e.g., answer.textAnswer) prominently beneath the question text, keeping the existing romantic themed Card layout and timestamp display. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useAnswers.ts",
+          "operation": "modify",
+          "description": "Ensure the Answer type used by the Saved Answers query aligns with the updated written-answer shape (no rating field) so the view compiles cleanly. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        /* Warm romantic palette - light mode */
+        --background: 0.99 0.01 15;
+        --foreground: 0.25 0.08 15;
+        --card: 1 0.015 15;
+        --card-foreground: 0.25 0.08 15;
+        --popover: 1 0.015 15;
+        --popover-foreground: 0.25 0.08 15;
+        --primary: 0.55 0.18 15;
+        --primary-foreground: 0.99 0.01 15;
+        --secondary: 0.96 0.02 15;
+        --secondary-foreground: 0.35 0.08 15;
+        --muted: 0.96 0.02 15;
+        --muted-foreground: 0.55 0.06 15;
+        --accent: 0.94 0.03 15;
+        --accent-foreground: 0.35 0.08 15;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.99 0.01 15;
+        --border: 0.92 0.02 15;
+        --input: 0.92 0.02 15;
+        --ring: 0.55 0.18 15;
+        --chart-1: 0.65 0.15 15;
+        --chart-2: 0.70 0.12 340;
+        --chart-3: 0.60 0.10 30;
+        --chart-4: 0.75 0.14 350;
+        --chart-5: 0.68 0.16 10;
+        --sidebar: 0.99 0.01 15;
+        --sidebar-foreground: 0.25 0.08 15;
+        --sidebar-primary: 0.55 0.18 15;
+        --sidebar-primary-foreground: 0.99 0.01 15;
+        --sidebar-accent: 0.96 0.02 15;
+        --sidebar-accent-foreground: 0.35 0.08 15;
+        --sidebar-border: 0.92 0.02 15;
+        --sidebar-ring: 0.55 0.18 15;
+    }
+
+    .dark {
+        /* Warm romantic palette - dark mode */
+        --background: 0.20 0.06 15;
+        --foreground: 0.96 0.02 15;
+        --card: 0.25 0.07 15;
+        --card-foreground: 0.96 0.02 15;
+        --popover: 0.28 0.07 15;
+        --popover-foreground: 0.96 0.02 15;
+        --primary: 0.85 0.08 15;
+        --primary-foreground: 0.25 0.08 15;
+        --secondary: 0.30 0.07 15;
+        --secondary-foreground: 0.96 0.02 15;
+        --muted: 0.30 0.07 15;
+        --muted-foreground: 0.70 0.04 15;
+        --accent: 0.40 0.08 15;
+        --accent-foreground: 0.96 0.02 15;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.25 0.08 15;
+        --border: 1 0 0 / 12%;
+        --input: 1 0 0 / 18%;
+        --ring: 0.60 0.10 15;
+        --chart-1: 0.55 0.18 15;
+        --chart-2: 0.65 0.14 340;
+        --chart-3: 0.70 0.12 30;
+        --chart-4: 0.60 0.16 350;
+        --chart-5: 0.68 0.14 10;
+        --sidebar: 0.25 0.07 15;
+        --sidebar-foreground: 0.96 0.02 15;
+        --sidebar-primary: 0.55 0.18 15;
+        --sidebar-primary-foreground: 0.96 0.02 15;
+        --sidebar-accent: 0.30 0.07 15;
+        --sidebar-accent-foreground: 0.96 0.02 15;
+        --sidebar-border: 1 0 0 / 12%;
+        --sidebar-ring: 0.50 0.08 15;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+}

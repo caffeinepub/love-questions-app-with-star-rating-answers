@@ -1,0 +1,14 @@
+{
+  "frontend/src/App.tsx": "Main application component that wraps the app with ThemeProvider and QueryClientProvider, manages view state (question/saved), and renders AppLayout with appropriate child views.",
+  "frontend/src/components/AppLayout.tsx": "Responsive layout wrapper with hero section featuring generated images, navigation buttons, main content area, and footer with attribution; updated copy to reflect written answers instead of ratings.",
+  "frontend/src/components/QuestionCard.tsx": "Interactive question card component with textarea for written answers, navigation controls (next/previous/random), save functionality with client-side validation, and success/error feedback.",
+  "frontend/src/components/StarRating.tsx": "Reusable 1-5 star rating component with accessible keyboard navigation and visual feedback for selected/unselected states.",
+  "frontend/src/views/SavedAnswersView.tsx": "Displays list of saved answers with question text, written answer content in styled boxes, and timestamps in reverse chronological order, including loading and empty states.",
+  "frontend/src/data/loveQuestions.ts": "Curated collection of 18 romantic questions with stable IDs for deterministic navigation and backend storage.",
+  "frontend/src/lib/questionNavigation.ts": "Helper functions for deterministic question navigation (next/previous with wrap-around) and random selection avoiding immediate repeats.",
+  "frontend/src/lib/dateFormat.ts": "Utility function to format Unix timestamps into readable English date/time strings.",
+  "frontend/src/hooks/useAnswers.ts": "React Query hook to fetch all saved answers from the backend canister.",
+  "frontend/src/hooks/useSaveAnswer.ts": "React Query mutation hook to save written answers to the backend with automatic query invalidation, client-side validation for empty answers, and toast notifications.",
+  "frontend/src/index.css": "Global styles with warm romantic OKLCH color palette (rose/pink/red tones) for both light and dark modes, avoiding blue/purple dominance.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with warm romantic color tokens, custom font family (Inter), and increased border radius for softer appearance."
+}

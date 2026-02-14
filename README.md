@@ -1,2 +1,3 @@
-# love-questions-app-with-star-rating-answers
-Exported from Caffeine project: Love Questions app with star-rating answers
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

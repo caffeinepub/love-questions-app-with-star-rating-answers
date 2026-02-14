@@ -1,0 +1,40 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T11:37:32.730Z",
+  "summary": "Most of the requested replacement of star ratings with written answers appears implemented across frontend and backend (textarea input, save flow using textAnswer, saved answers display). However, the backend/answer field name does not match the specified Answer record shape (answerText), and there are additional UI/layout changes that were not requested.",
+  "missing_requirements": [
+    {
+      "id": "REQ-9",
+      "requirement": "Backend Answer type contains questionId, answerText (written answer), and timestamp (no rating field).",
+      "reason": "The diff updates the backend Answer record but names the written-answer field `textAnswer` instead of the required `answerText`, so the record shape does not match the spec/AC as written.",
+      "evidence": [
+        "backend/main.mo",
+        "backend/migration.mo",
+        "frontend/src/views/SavedAnswersView.tsx",
+        "frontend/src/hooks/useSaveAnswer.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Major AppLayout redesign/content changes (hero section with generated images, new marketing copy, caffeine.ai attribution footer).",
+      "reason": "The BuildRequest focuses on replacing star ratings with written answers and updating related labels/flows; it does not request a broader layout redesign, new hero imagery usage, or attribution/footer changes.",
+      "evidence": [
+        "frontend/src/components/AppLayout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/components/AppLayout.tsx",
+    "frontend/src/components/QuestionCard.tsx",
+    "frontend/src/components/StarRating.tsx",
+    "frontend/src/hooks/useSaveAnswer.ts",
+    "frontend/src/views/SavedAnswersView.tsx",
+    "project_state.json"
+  ]
+}

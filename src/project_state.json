@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a simple app to ask romantic/love questions (optionally with star-rating answers) for the user's girlfriend.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-frontend-experience-that-lets-the-user-present-a-romantic-love-question-to-their-girlfriend-then-record-an-answer-using-a-1-5-star-rating",
+      "title": "Create a frontend experience that lets the user present a romantic/love question to their girlfriend, then record an answer using a 1–5 star rating.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-a-curated-default-set-of-love-romantic-questions-in-the-app-and-allow-cycling-through-them-in-a-deterministic-way-e-g-sequential-with-wrap-around-as-well-as-a-random-option",
+      "title": "Provide a curated default set of love/romantic questions in the app and allow cycling through them in a deterministic way (e.g., sequential with wrap-around) as well as a random option.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-the-frontend-to-the-backend-so-that-saving-a-rating-calls-the-canister-and-the-user-can-view-a-simple-saved-answers-history-screen",
+      "title": "Connect the frontend to the backend so that saving a rating calls the canister and the user can view a simple “Saved answers” history screen.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-romantic-visual-theme-across-the-ui-colors-typography-spacing-and-components-that-feels-warm-and-intimate-avoiding-blue-purple-as-dominant-colors",
+      "title": "Apply a coherent romantic visual theme across the UI (colors, typography, spacing, and components) that feels warm and intimate, avoiding blue/purple as dominant colors.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-and-use-them-in-the-frontend-served-from-frontend-public-assets-generated-to-support-the-romantic-theme",
+      "title": "Add generated static image assets and use them in the frontend (served from frontend/public/assets/generated) to support the romantic theme.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-1-5-star-rating-input-on-the-question-screen-with-a-free-form-written-answer-input-multi-line-text-and-update-all-user-facing-labels-buttons-messages-accordingly-in-english",
+      "title": "Replace the 1–5 star rating input on the question screen with a free-form written answer input (multi-line text), and update all user-facing labels/buttons/messages accordingly in English.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-save-answer-flow-from-the-question-screen-to-persist-a-written-answer-instead-of-a-numeric-rating-including-client-side-validation-and-success-error-handling",
+      "title": "Update the save-answer flow from the question screen to persist a written answer instead of a numeric rating, including client-side validation and success/error handling.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-backend-answer-record-shape-and-the-getallanswers-response-to-include-the-written-answer-and-remove-rating-and-update-the-frontend-saved-answers-view-to-display-the-written-answer-text-for-each-saved-entry",
+      "title": "Update the backend Answer record shape and the getAllAnswers response to include the written answer (and remove rating), and update the frontend Saved Answers view to display the written answer text for each saved entry.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create an app that presents love/romantic questions the user can ask his girlfriend, with optional star-rating style answers.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement backend storage for submitted answers (question text/id + selected star rating + timestamp) and expose canister methods to create and list saved answers.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Replace the 1–5 star rating answer input with a free-form written answer input for each romantic question.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Love Questions app with star-rating answers",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
